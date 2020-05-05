@@ -11,7 +11,7 @@ export class CreateBandUC {
         const band = new Band(
             id,
             input.name,
-            input.musicGenre,
+            input.music_genre,
             input.responsible
         )
 
@@ -26,7 +26,7 @@ export class CreateBandUC {
 
 export interface CreateBandUCInput {
     name: string;
-    musicGenre: string;
+    music_genre: string;
     responsible: string;
 }
 

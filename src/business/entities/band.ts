@@ -2,7 +2,7 @@ export class Band {
   constructor(
     private id: string,
     private name: string,
-    private musicGenre: string,
+    private music_genre: string,
     private responsible: string
   ) {}
 
@@ -15,7 +15,7 @@ export class Band {
   }
 
   public getMusicGenre(): string {
-    return this.musicGenre;
+    return this.music_genre;
   }
 
   public getResponsible(): string {

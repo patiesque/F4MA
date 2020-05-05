@@ -10,7 +10,7 @@ export const createShowEndpoint = async (req: Request, res: Response) => {
             startTime: req.body.startTime,
             endTime: req.body.endTime,
             bandId: req.body.bandId,
-        });
+        }); 
 
         res.status(200).send(result);
     }catch(err){

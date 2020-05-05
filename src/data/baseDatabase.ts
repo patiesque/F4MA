@@ -10,7 +10,7 @@ export abstract class BaseDatabase {
   };
 
   protected connection = knex({
-    client: process.env.CLIENT,
+    client: process.env.CLIENT as string,
     connection: this.connectionData
   });
 }

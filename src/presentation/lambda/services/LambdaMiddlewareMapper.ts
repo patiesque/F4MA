@@ -19,7 +19,12 @@ export class LambdaMiddlewareMapper {
 
   static toLambdaResponse(data: MiddlewareResponseData): LambdaResponse {
     return {
-      headers: data.headers,
+      headers: {
+        ...data.headers,
+       "Access-Control-Allow-Headers": "*",
+       "Access-Control-Allow-Methods": "*",
+       "Access-Control-Allow-Origin": "*"
+      },
       body: JSON.stringify(data.body),
       statusCode: data.statusCode
     };

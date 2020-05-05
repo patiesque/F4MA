@@ -14,15 +14,20 @@ export class CreateShowUC {
         if (input.endTime > 23) {
             throw new Error("marcar antes das 23");
         }
+        if(input.endTime < input.startTime){
+            throw new Error("horario errado");
+        }
         const getShow = await this.showGateway.getShowWithBandByTimeRange(
             input.startTime,
             input.endTime,
             input.weekDate
         )
-
+            
         if(getShow.length > 0){
             throw new Error("horario fora");
         }
+
+
 
         const show = new Show(
             id,

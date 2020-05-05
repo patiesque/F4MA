@@ -32,6 +32,7 @@ export interface GetShowInput {
 export interface GetShowsOutput {
     shows: GetShowOutput[]
 }
+
 export interface GetShowOutput {
     weekDate: ShowWeekDay,
     startTime: number,

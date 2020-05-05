@@ -2,8 +2,8 @@ import { v4 } from "uuid";
 import { ShowGateway } from "../../gateways/showGateway";
 import { Show, ShowWeekDay } from "../../entities/show";
 import { CheckAfter } from "../../Error/CheckAfter";
-import { CheckBefore } from "../../Error/CheckBefore";
 import { WrongTime } from "../../Error/WrongTime";
+import { CheckBefore } from "../../Error/CheckBefore";
 
 export class CreateShowUC {
     constructor(private showGateway: ShowGateway) { }
@@ -17,7 +17,7 @@ export class CreateShowUC {
         if (input.endTime > 23) {
             throw new CheckBefore;
         }
-        if(input.endTime < input.startTime){
+        if (input.endTime < input.startTime) {
             throw new WrongTime;
         }
         const getShow = await this.showGateway.getShowWithBandByTimeRange(
@@ -25,8 +25,8 @@ export class CreateShowUC {
             input.endTime,
             input.weekDate
         )
-            
-        if(getShow.length > 0){
+
+        if (getShow.length > 0) {
             throw new WrongTime;
         }
 
@@ -37,7 +37,7 @@ export class CreateShowUC {
             input.endTime,
             input.bandId,
         )
- 
+
         await this.showGateway.createShow(show)
 
         return {

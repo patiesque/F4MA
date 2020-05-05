@@ -1,5 +1,6 @@
 import { BandGateway } from "../../gateways/bandGateway";
 import { Band } from "../../entities/band";
+import { NotFound } from "../../Error/notFound";
 
 export class GetBandUC {
     constructor(private bandGateway: BandGateway) { }
@@ -14,7 +15,7 @@ export class GetBandUC {
         }
 
         if (!band) {
-            throw new Error("Band not found");
+            throw new NotFound;
         }
 
         return {
@@ -35,5 +36,5 @@ export interface GetBandOutput {
 
 export interface GetBandInput {
     id: string;
-    name:string;
+    name: string;
 }

@@ -5,7 +5,7 @@ import { createShowEndpoint } from "./endpoints/show/createShow";
 import { getShowEndpoint } from "./endpoints/show/getShow";
 
 const app = express();
-app.use(express.json()); // Linha mágica (middleware)
+app.use(express.json());
 
 app.post("/createband", createBandEndpoint);
 app.get("/getband", getBandEndpoint);

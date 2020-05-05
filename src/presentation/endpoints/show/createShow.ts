@@ -7,9 +7,9 @@ export const createShowEndpoint = async (req: Request, res: Response) => {
         const createShowUc = new CreateShowUC(new ShowDatabase());
         const result = await createShowUc.execute({
             weekDate: req.body.weekDate,
-            startTime: req.body.startTime,
-            endTime: req.body.endTime,
-            bandId: req.body.bandId,
+            startTime: req.body.start,
+            endTime: req.body.end,
+            bandId: req.body.band,
         });
         res.status(200).send(result);
     } catch (err) {

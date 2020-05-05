@@ -1,6 +1,6 @@
 import { ShowGateway } from "../../gateways/showGateway";
 import { ShowWeekDay, Show } from "../../entities/show";
-import { NotFound } from "../../Error/notFound";
+import { NotFound } from "../../Error/NotFound";
 
 export class GetShowUC {
     constructor(private ShowGateway: ShowGateway) { }

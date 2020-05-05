@@ -1,6 +1,6 @@
 import { BandGateway } from "../../gateways/bandGateway";
 import { Band } from "../../entities/band";
-import { NotFound } from "../../Error/notFound";
+import { NotFound } from "../../Error/NotFound";
 
 export class GetBandUC {
     constructor(private bandGateway: BandGateway) { }

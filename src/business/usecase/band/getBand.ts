@@ -32,6 +32,7 @@ export interface GetBandOutput {
     musicGenre: string;
     responsible: string;
 }
+
 export interface GetBandInput {
     id: string;
     name:string;

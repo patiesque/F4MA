@@ -21,7 +21,6 @@ export class CreateBandUC {
             message: "Successfully Created"
         }
     }
-
 }
 
 export interface CreateBandUCInput {

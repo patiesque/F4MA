@@ -1,6 +1,9 @@
 import { v4 } from "uuid";
 import { ShowGateway } from "../../gateways/showGateway";
 import { Show, ShowWeekDay } from "../../entities/show";
+import { CheckAfter } from "../../Error/CheckAfter";
+import { CheckBefore } from "../../Error/CheckBefore";
+import { WrongTime } from "../../Error/WrongTime";
 
 export class CreateShowUC {
     constructor(private showGateway: ShowGateway) { }
@@ -9,13 +12,13 @@ export class CreateShowUC {
         const id = v4();
 
         if (input.startTime < 8) {
-            throw new Error("marcar apos as 8");
+            throw new CheckAfter;
         }
         if (input.endTime > 23) {
-            throw new Error("marcar antes das 23");
+            throw new CheckBefore;
         }
         if(input.endTime < input.startTime){
-            throw new Error("horario errado");
+            throw new WrongTime;
         }
         const getShow = await this.showGateway.getShowWithBandByTimeRange(
             input.startTime,
@@ -24,10 +27,8 @@ export class CreateShowUC {
         )
             
         if(getShow.length > 0){
-            throw new Error("horario fora");
+            throw new WrongTime;
         }
-
-
 
         const show = new Show(
             id,
@@ -43,7 +44,6 @@ export class CreateShowUC {
             message: "Successfully Created"
         }
     }
-
 }
 
 export interface CreateShowUCInput {
@@ -52,8 +52,6 @@ export interface CreateShowUCInput {
     endTime: number;
     bandId: string
 }
-
-
 
 export interface CreateShowUCOutput {
     message: string;

@@ -12,7 +12,7 @@
 
 Repositorio foi desenvolvido para projeto curso Labenu.<br/>
 Criado para cadastro de bandas, ver todas bandas, <br/>
-como criação de shows e agendamento com o cuidado para não agendar no mesmo dia e horario,<br/>
+como criação de shows e agendamento, com o cuidado para não agendar no mesmo dia e horario,<br/>
 e acessar todos os shows agendados em um dia da semana.
 
 ## ⚙️ Techs:
@@ -52,7 +52,7 @@ npm run start:dev
 <h4 align="center">
   ---
 
-Patricia Matieque Alves <br/>
+Patricia Matiesque Alves <br/>
 [Linkedin](https://www.linkedin.com/in/patricia-matiesque/)
 </h4>
 
